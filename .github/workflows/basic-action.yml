@@ -1,0 +1,23 @@
+name: GitHub Actions Basic Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  basic-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display message
+        run: echo "GitHub Actions workflow executed successfully"
+
+      - name: Check project files
+        run: ls
